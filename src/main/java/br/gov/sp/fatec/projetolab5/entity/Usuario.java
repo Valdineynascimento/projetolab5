@@ -1,5 +1,7 @@
 package br.gov.sp.fatec.projetolab5.entity;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,7 +16,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "usr_usuario")
 public class Usuario {
-	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

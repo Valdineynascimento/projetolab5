@@ -48,11 +48,9 @@ public class SegurancaServiceImpl implements SegurancaService {
 	public Usuario buscarUsuarioPorId(Long id) {
 		Optional<Usuario> optionalUsuario = usuarioRepo.findById(id);
 		if(optionalUsuario.isEmpty()) {
-			throw new IllegalArgumentException("Id não existe!");
-			
+			throw new IllegalArgumentException("Id não existe!");			
 		}
 		return optionalUsuario.get();
 	}
-	
 
 }
