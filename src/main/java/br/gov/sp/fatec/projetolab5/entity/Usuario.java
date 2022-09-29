@@ -16,59 +16,62 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "usr_usuario")
 public class Usuario {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "usr_id")
-	private Long id;
-	
-	@Column(name = "usr_nome")
-	private String nome;
-	
-	@Column(name = "usr_senha")
-	private String senha;
 
-	@ManyToMany(fetch = FetchType.LAZY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "usr_id")
+    private Long id;
+
+    @Column(name = "usr_nome")
+    private String nome;
+
+    @Column(name = "usr_senha")
+    private String senha;
+
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "uau_usuario_autorizacao",
         joinColumns = { @JoinColumn(name = "usr_id")},
         inverseJoinColumns = { @JoinColumn(name = "aut_id") }
     )
-	private Set<Autorizacao> autorizacoes;
-	
-	
-	
-	public Long getId() {
-		return id;
-	}
+    private Set<Autorizacao> autorizacoes;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Usuario() {}
 
-	public String getNome() {
-		return nome;
-	}
+    public Usuario(String nome, String senha) {
+        this.nome = nome;
+        this.senha = senha;
+    }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getSenha() {
-		return senha;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public Set<Autorizacao> getAutorizacoes() {
-		return autorizacoes;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public void setAutorizacoes(Set<Autorizacao> autorizacoes) {
-		this.autorizacoes = autorizacoes;
-	}
+    public String getSenha() {
+        return senha;
+    }
 
-	
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
+    public Set<Autorizacao> getAutorizacoes() {
+        return autorizacoes;
+    }
+
+    public void setAutorizacoes(Set<Autorizacao> autorizacoes) {
+        this.autorizacoes = autorizacoes;
+    }
+    
 }
