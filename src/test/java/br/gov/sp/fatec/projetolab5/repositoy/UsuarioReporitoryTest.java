@@ -1,6 +1,7 @@
 package br.gov.sp.fatec.projetolab5.repositoy;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -29,7 +30,7 @@ public class UsuarioReporitoryTest {
 	}
 	
 	@Test
-	void testaInsercao() {
+	public void testaInsercao() {
 		Usuario usuario = new Usuario();
 		usuario.setNome("Valdiney");
 		usuario.setSenha("SenhaF0rte");
@@ -39,14 +40,14 @@ public class UsuarioReporitoryTest {
 	}
 	
 	@Test
-	void testaAutorizacao() {
+	public void testaAutorizacao() {
 		Usuario usuario = usuarioRepo.findById(1L).get();
 		assertEquals("ROLE_ADMIN", usuario.getAutorizacoes().iterator().next().getNome());
 		
 	}
 	
 	@Test
-	void testaUsuario() {
+	public void testaUsuario() {
 		Autorizacao aut = autRepo.findById(1L).get();
 		assertEquals("Valdiney", aut.getUsuarios().iterator().next().getNome());
 		
