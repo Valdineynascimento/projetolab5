@@ -32,7 +32,7 @@ public class UsuarioReporitoryTest {
 	@Test
 	public void testaInsercao() {
 		Usuario usuario = new Usuario();
-		usuario.setNome("Valdiney");
+		usuario.setNome("Valdiney2");
 		usuario.setSenha("SenhaF0rte");
 		usuarioRepo.save(usuario);
 		assertNotNull(usuario.getId());

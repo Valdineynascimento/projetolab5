@@ -62,7 +62,7 @@ public class SegurancaServiceTest {
     }
 
     @Test
-    Public void todosUsuariosTestOk() {
+    public void todosUsuariosTestOk() {
         assertEquals(1, service.todosUsuarios().size());
     }
     
