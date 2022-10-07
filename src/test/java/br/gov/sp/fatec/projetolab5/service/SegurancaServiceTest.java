@@ -32,8 +32,8 @@ public class SegurancaServiceTest {
     public void setUp() {
         Usuario usuario = new Usuario();
         usuario.setId(1L);
-        usuario.setNome("Teste");
-        usuario.setSenha("Senha");
+        usuario.setNome("Valdiney");
+        usuario.setSenha("SenhaF0rte");
         List<Usuario> usuarios = new ArrayList<Usuario>();
         usuarios.add(usuario);
         Optional<Usuario> usuarioOp = Optional.of(usuario);
@@ -44,20 +44,20 @@ public class SegurancaServiceTest {
 
     @Test
     public void buscarUsuarioPorIdTestOk() {
-        assertEquals("Teste", service.buscarUsuarioPorId(1L).getNome());
+        assertEquals("Valdiney", service.buscarUsuarioPorId(1L).getNome());
     }
 
     @Test
     public void novoUsuarioTestNOkNomeNull() {
         assertThrows(IllegalArgumentException.class, () -> {
-                service.novoUsuario(null, "Senha");
+                service.novoUsuario(null, "SenhaF0rte");
             });
     }
 
     @Test
     public void novoUsuarioTestOk() {
         assertDoesNotThrow(() -> {
-                service.novoUsuario("Teste", "Senha");
+                service.novoUsuario("Valdiney", "SenhaF0rte");
             });
     }
 
